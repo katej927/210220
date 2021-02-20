@@ -1,0 +1,39 @@
+
+/**
+ *
+ * @param {string} loading - 로딩은 트루일때 그냥 로딩만 쓰고, 폴스 일때는 false를 어사인 해줘
+ */
+
+const layoutWrapper = (children) => (
+    <div style={{ background: "red" }}>
+      <div>
+        <div>{children} </div>
+      </div>
+    </div>
+  );
+
+  var items = [
+    {
+      inputType: "button",
+      buttonText: "test",
+    },
+    { inputType: "text", placeholder: "asjdlfjskladf" },
+  ];
+
+  const inputItem = (type, name, placeholder) => {
+
+  }
+  return (
+    <>
+      {items.map((item) => {
+        return layoutWrapper(
+          item.inputType == "button" ? (
+            <button>{item.buttonText}</button>
+          ) : (
+            <input placeholder={item.placeholder} />
+          ),
+        );
+      })}
+      {/* {layoutWrapper(item1)}
+
+      {layoutWrapper("<input />")} */}
